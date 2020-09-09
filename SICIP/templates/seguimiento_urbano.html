@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<style type="text/css">
+    table {
+border: black 1px solid;
+  width: 60%;
+}
+  .boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: darkblue;
+    background-color: turquoise;
+    border-radius: 15px;
+    border: 3px double darkblue;
+  }
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+</style>
+
+<form method="POST">
+    {% csrf_token %}
+    <center><h3>DIRECCION DE GESTION DE LEGALIZACION  DE TIERRAS</h3></center>
+    <center><h3>COORDINACION URBANO</h3></center>
+    <center><h3>SEGUIMIENTO</h3></center>
+    <center><table  border-collapse: collapse > 
+        <table>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+        <tr>
+            <th>Fecha de ingreso al D.M.Q:</th>
+            <td>{{ form.mdmqurbana.fecha_ingreso_dmq }}</td>
+        </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+            <tr>
+            <th>Fecha de solicitud de cambios: </th>
+            <td> {{ form.mdmqurbana.fecha_solicitud_cambio }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Fecha de reingreso al D.M.Q: </th>
+            <td> {{ form.mdmqurbana.fecha_reingreso_dmq }}</td>
+            
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Seleccione el Tramite: </th>
+            <td> {{ form.mdmqurbana.tramite }}</td>
+            
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Tec Responsable: </th>
+            <td> {{ form.mdmqurbana.tecnico }}</td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+
+          <tr>
+            <td colspan="2"><center><button type="submit" class="boton_1">Guardar</button></center></td>
+        </tr>
+            </table>
+    </table></center>
+</form>
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<style type="text/css">
+    table {
+border: black 1px solid;
+  width: 60%;
+}
+  .boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: darkblue;
+    background-color: turquoise;
+    border-radius: 15px;
+    border: 3px double darkblue;
+  }
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+</style>
+<form method="POST">
+    {% csrf_token %}
+    
+    
+    
+    <center><table  border-collapse: collapse > 
+        <table>
+            <tr>
+                <td colspan="8">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="8"><center><h3>DIRECCION DE GESTION DE LEGALIZACION  DE TIERRAS</h3></center></td>
+            </tr>
+            <tr>
+                <td colspan="8"><center><h3>COORDINACION DE INFORMACION PREDIAL</h3></center></td>
+            </tr>
+            <tr>
+                <td colspan="8"><center><h3>REUNION SECTORIAL SOCIOLOGICA</h3></center></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="6">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <th>Fecha de reunion: </th>
+                <td>{{ form.informesociologica.fecha_reunion_soci }}</td>
+                <th>Tramite: </th>
+                <td>{{ form.beneficiario.tramite }}</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="6">Informacion del Solicitante</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <th>Nombre: </th>
+                <td>{{ form.beneficiario.nombre }}</td>
+                <th>Apellido: </th>
+                <td> {{ form.beneficiario.apellido }}</td>
+                <th>Cedula: </th>
+                <td> {{ form.beneficiario.cedula }}</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="6">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <th>Celular: </th>
+                <td> {{ form.beneficiario.celular }}</td>
+                <th>Correo: </th>
+                <td> {{ form.beneficiario.correo }}</td>
+                <td>Sexo</td>
+                <td>{{ form.beneficiario.sexo}};</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="6">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>Dignidad</td>
+                <td>{{ form.beneficiario.dignidad}};</td>
+                <td>Edad</td>
+                <td>{{ form.beneficiario.edad}};</td>
+                <td>Estado civil;</td>
+                <td>{{ form.beneficiario.estado_civil }}</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="6">Caracterizacion predial:</td>
+                <td>&nbsp;</td>
+            </tr>
+            
+        <tr>
+            <td>&nbsp;</td>
+            <th>Homogeneidad:</th>
+            <td>{{ form.informesociologica.homogenidad_predial }}</td>
+            <th>Definicion e procesos de intervencion: </th>
+            <td> {{ form.informesociologica.def_procesos_intervencion }}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+
+        </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="6">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            <tr>
+            <td>&nbsp;</td>
+            <th>Datos de los predios: </th>
+            <td> {{ form.informesociologica.datos_predios }}</td>
+            <td>Seleccione el Tramite:</td>
+            <td>{{ form.informesociologica.tramite}}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="8">-</td>
+        </tr>
+          <tr>
+            <td colspan="8"><center><button type="submit" class="boton_1">Guardar</button></center></td>
+        </tr>
+            </table>
+    </table></center>
+</form>
+
+{% endblock %}

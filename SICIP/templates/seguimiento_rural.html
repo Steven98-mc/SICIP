@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<style type="text/css">
+    table {
+border: black 1px solid;
+  width: 60%;
+}
+  .boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: darkblue;
+    background-color: turquoise;
+    border-radius: 15px;
+    border: 3px double darkblue;
+  }
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+</style>
+<form method="POST">
+    {% csrf_token %}
+    <center><table  border-collapse: collapse > 
+        <table>
+            <tr>
+                <td colspan="4">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="4"><center><h3>DIRECCION DE GESTION DE LEGALIZACION  DE TIERRAS</h3></center></td>
+            </tr>
+            <tr>
+                <td colspan="4"><center><h3>COORDINACION RURAL</h3></center></td>
+            </tr>
+            <tr>
+                <td colspan="4"><center><h3>SEGUIMIENTO</h3></center></td>
+            </tr>
+            <tr>
+                <td colspan="4">&nbsp;</td>
+            </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Fecha de entrega del plano borrador:</th>
+            <td>{{ form.gadpp.fecha_entrega_plano_borrador }}</td>
+            <td>&nbsp;</td>
+        </tr>
+                <tr>
+                    <td colspan="4">&nbsp;</td>
+                </tr>
+            <tr>
+                <td>&nbsp;</td>
+            <th>Fecha de firma del plano original: </th>
+            <td> {{ form.gadpp.fecha_firma_plano_original }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>D.M.Q Certificado de estado: </th>
+            <td> {{ form.mdmq.certificado_estado }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Fecha de entrega certificado de estado D.M.Q: </th>
+            <td> {{ form.mdmq.fecha_entrega_certificado_estado }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Seleccione el tramite</th>
+            <td>{{ form.mdmq.tramite }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <th>Fecha de certificado MAE: </th>
+            <td> {{ form.stra.fecha_certificado_mae }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Fecha de ingreso a la STRA: </th>
+            <td> {{ form.stra.fecha_ingreso_stra }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Fecha de inspeccion: </th>
+            <td> {{ form.stra.fecha_inspeccion }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Fecha de entrega de providencias: </th>
+            <td> {{ form.stra.fecha_entrega_providencia }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Seleccione el tramite</th>
+            <td>{{ form.stra.tramite }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Numero de providencias: </th>
+            <td> {{ form.stra.numero_providencia }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Fecha de ingreso al registro de la propiedad: </th>
+            <td> {{ form.mdmq.fecha_ingreso_registro_propiedad }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th> Numero de registro: </th>
+            <td> {{ form.mdmq.numero_registro }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Registro STRA: </th>
+            <td> {{ form.stra.registro_stra }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th>Seleccione el tramite</th>
+            <td>{{ form.gadpp.tramite }}</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+          <tr>
+            <td colspan="4"><center><button type="submit" class="boton_1">Guardar</button></center></td>
+        </tr>
+            </table>
+    </table></center>
+</form>
+
+{% endblock %}

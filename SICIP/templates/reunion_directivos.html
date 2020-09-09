@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% block content%}
+<style type="text/css">
+    table {
+border: black 1px solid;
+  width: 60%;
+}
+  .boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: darkblue;
+    background-color: turquoise;
+    border-radius: 15px;
+    border: 3px double darkblue;
+  }
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+</style>
+<form method="POST">
+    {% csrf_token %}
+    <center><h3>DIRECCION DE GESTION DE LEGALIZACION  DE TIERRAS</h3></center>
+    <center><h3>COORDINACION DE INFORMACION PREDIAL</h3></center>
+    <center><h3>REUNION CON LOS DIRECTIVOS</h3></center>
+    <center><table  border-collapse: collapse > 
+        <table>
+          <tr>
+            <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+          <th>N° Tramite: </th>
+                <td>{{ form.beneficiario.tramite }}</td>
+        </tr>
+            <tr>
+                <td colspan="6">Informacion del Solicitante</td>
+            </tr>
+            <tr>
+                <th>Nombre: </th>
+                <td>{{ form.beneficiario.nombre }}</td>
+                <th>Apellido: </th>
+                <td> {{ form.beneficiario.apellido }}</td>
+                <th>Cedula: </th>
+                <td> {{ form.beneficiario.cedula }}</td>
+            </tr>
+            <tr>
+                <td colspan="6">-</td>
+            </tr>
+            <tr>
+                <th>Celular: </th>
+                <td> {{ form.beneficiario.celular }}</td>
+                <th>Correo: </th>
+                <td> {{ form.beneficiario.correo }}</td>
+                <th>Sexo: </th>
+                <td> {{ form.beneficiario.sexo }}</td>
+            </tr>
+            <tr>
+                <td colspan="6">-</td>
+            </tr>
+            <tr>
+                <th>DIgnididad: </th>
+                <td> {{ form.beneficiario.dignidad }}</td>
+                <th>Edad: </th>
+                <td> {{ form.beneficiario.edad }}</td>
+                <th>Estado Civil: </th>
+                <td> {{ form.beneficiario.estado_civil }}</td>
+            </tr>
+
+            <tr>
+                <td colspan="6">Caracterizacion Predial:</td>
+            </tr>
+    
+            <tr>
+                <th>Fecha de entrega de informacion: </th>
+                <td>{{ form.informedirectivo.fecha_entrega_informacion }}</td>
+                <th>Fecha de firma de convenio de cooperacion : </th>
+                <td> {{ form.informedirectivo.fecha_firma_convenio }}</td>
+                <th>Numero de beneficiario en el sector: </th>
+                <td> {{ form.informedirectivo.numero_beneficiario_sector}}</td>
+                
+              </tr>
+              <tr>
+                  <td colspan="6">&nbsp;</td>
+              </tr>
+              <tr>
+                <th>Conformacion social legal el predio: </th>
+                <td> {{ form.informedirectivo.conf_socialpredio}}</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td colspan="6">Informe Predial:</td>
+            </tr>
+              <tr>
+                <th>Problemas encontrados: </th>
+                <td>{{ form.informedirectivo.problemas_encontrados }}</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+                <tr>
+                    <td colspan="6">Informacion de Respaldos</td>
+                </tr>
+                <tr>
+                    <th>Posibles soluciones: </th>
+                    <td>{{ form.informedirectivo.posibles_soluciones }}</td>
+                    <td>&nbsp;</td>
+                    <td>Seleccione el tramite</td>
+                    <td>{{ form.informedirectivo.tramite }}</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                      <td colspan="6">-</td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <th>&nbsp;</th>
+                    <td>&nbsp;</td>
+
+                  </tr>
+          <tr>
+            <td colspan="6"><center><button type="submit" class="button button1">Guardar</button></center></td>
+        </tr>
+            </table>
+    </table></center>
+</form>
+
+{% endblock %}

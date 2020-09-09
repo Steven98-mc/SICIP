@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block content%}
+<style type="text/css">
+    table {
+border: black 1px solid;
+  width: 60%;
+}
+  .boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: darkblue;
+    background-color: turquoise;
+    border-radius: 15px;
+    border: 3px double darkblue;
+  }
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+</style>
+<form method="POST">
+    {% csrf_token %}
+    <center><h3>DIRECCION DE GESTION DE LEGALIZACION  DE TIERRAS</h3></center>
+    <center><h3>INFORMACION DEL PREDIO</h3></center>
+    <center><table  border-collapse: collapse > 
+        <table>
+            <tr>
+                <td colspan="6">&nbsp;</td>
+            </tr>
+        <tr>
+            <th>Fecha ingreso:</th>
+            <td>{{ form.predio.fecha_ingreso }}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>N° Tramite:</td>
+            <td>{{ form.beneficiario.tramite }}</td>
+        </tr>
+                <tr>
+                    <td colspan="6">Beneficiario:</td>
+                </tr>
+                <tr>
+                    <th>Nombre: </th>
+                    <td>{{ form.beneficiario.nombre }}</td>
+                    <th>Apellido: </th>
+                    <td> {{ form.beneficiario.apellido }}</td>
+                    <th>Cedula: </th>
+                    <td> {{ form.beneficiario.cedula }}</td>
+                </tr>
+                <tr>
+                    <td colspan="6">&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>Celular: </th>
+                    <td> {{ form.beneficiario.celular }}</td>
+                    <th>Correo: </th>
+                    <td> {{ form.beneficiario.correo }}</td>
+                    <th>Sexo: </th>
+                    <td> {{ form.beneficiario.sexo }}</td>
+                </tr>
+                <tr>
+                    <td colspan="6">&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>DIgnididad: </th>
+                    <td> {{ form.beneficiario.dignidad }}</td>
+                    <th>Edad: </th>
+                    <td> {{ form.beneficiario.edad }}</td>
+                    <th>Estado Civil: </th>
+                    <td> {{ form.beneficiario.estado_civil }}</td>
+                </tr>
+                <tr>
+                    <td colspan="6">&nbsp;</td>
+                </tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Conyuge:</td>
+                <td><a href="{% url 'Conyuge_crear' %}"><input type="button" value="Añadir Conyuge"></a></td>
+                <td>&nbsp;</td>
+                <tr>
+                    <td colspan="6">&nbsp;</td>
+                </tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Seleccione el conyugue ingresado :</td>
+                <td>{{ form.beneficiario.conyuge }}</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+        <tr>
+            <td colspan="6">Coordenadas del incentro del predio</td>
+        </tr>
+        <tr>
+            <th>Coordenada X (Este): </th>
+            <td> {{ form.predio.coordenadaX }}</td>
+            <th>Coordenada Y (Norte): </th>
+            <td> {{ form.predio.coordenadaY }}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Superficie: </th>
+            <td> {{ form.predio.superficie }}</td>
+            <th>Geocodigo: </th>
+            <td> {{ form.predio.geocodigo }}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Observaciones: </th>
+            <td> {{ form.predio.observaciones }}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>Seleccione el tramite indicado:</td>
+            <td>{{ form.predio.tramite }}</td>
+        </tr>
+    <tr>
+</tr>
+          <tr>
+            <td colspan="6"><center><button type="submit" class="boton_1">Guardar</button></center></td>
+        </tr>
+            </table>
+    </table></center>
+</form>
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block content%}
+<style type="text/css">
+    table {
+border: black 1px solid;
+  width: 60%;
+}
+  .boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 25px;
+    font-style: italic;
+    color: darkblue;
+    background-color: turquoise;
+    border-radius: 15px;
+    border: 3px double darkblue;
+  }
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+</style>
+<form method="POST">
+    {% csrf_token %}
+    <center><h3>DIRECCION DE GESTION DE LEGALIZACION  DE TIERRAS</h3></center>
+    <center><h3>COORDINACION DE INFORMES PREDIAL</h3></center>
+    <center><h3>INGRESO TRAMITE</h3></center>
+    <center><table  border-collapse: collapse > 
+        <table>
+            <tr>
+                <td colspan="6">&nbsp;</td>
+            </tr>
+            <tr>
+            <th>Tipo de tramite:</th>
+            <td>{{ form.tramite.tipo_tramite }}</td>
+            <th>Numero: </th>
+            <td> {{ form.tramite.numero }}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+                <tr>
+                    <td colspan="6">&nbsp;</td>
+                </tr>
+            <tr>
+            <th>Fecha de reunion: </th>
+            <td> {{ form.tramite.fecha_reunion_ingreso }}</td>
+            <th>Fecha de reunion en el sector: </th>
+            <td> {{ form.tramite.fecha_reunion_sector }}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        
+
+        <tr>
+            <td colspan="6">Informacion del Solicitante</td>
+        </tr>
+        <tr>
+            <th>Nombre: </th>
+            <td>{{ form.beneficiario.nombre }}</td>
+            <th>Apellido: </th>
+            <td> {{ form.beneficiario.apellido }}</td>
+            <th>Cedula: </th>
+            <td> {{ form.beneficiario.cedula }}</td>
+        </tr>
+        <tr>
+            <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+            <th>Celular: </th>
+            <td> {{ form.beneficiario.celular }}</td>
+            <th>Correo: </th>
+            <td> {{ form.beneficiario.correo }}</td>
+            <td>Sexo:</td>
+            <td>{{ form.beneficiario.sexo }}</td>
+        </tr>
+        <tr>
+          <td colspan="6">&nbsp;</td>
+      </tr>
+      <tr>
+          <th>Dignidad: </th>
+          <td> {{ form.beneficiario.dignidad }}</td>
+          <th>Edad: </th>
+          <td> {{ form.beneficiario.edad }}</td>
+          <td>Estado Civil:</td>
+          <td>{{ form.beneficiario.estado_civil}}</td>
+      </tr>
+
+        <tr>
+            <td colspan="6">Ubicacion</td>
+        </tr>
+
+        <tr>
+            <th>&nbsp;</th>
+            <th>Canton y Parroquia: </th>
+            <td> {{ form.tramite.parroquia }}</td>
+            <th>Sector: </th>
+            <td> {{ form.tramite.ubicacion }}</td>
+            <th>&nbsp;</th>
+          </tr>
+          <tr>
+              <td colspan="6">&nbsp;</td>
+          </tr>
+          <tr>
+            <th>Viavilidad: </th>
+            <td>{{ form.tramite.viavilidad }}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+
+            <tr>
+                <td colspan="6">Informacion de Respaldos</td>
+            </tr>
+            <tr>
+                <th>Escritura: </th>
+                <td>{{ form.tramite.escritura }}</td>
+                <th>Plano: </th>
+                <td> {{ form.tramite.plano }}</td>
+                <th>Irm: </th>
+                <td> {{ form.tramite.irm }}</td>
+              </tr>
+              <tr>
+                  <td colspan="6">&nbsp;</td>
+              </tr>
+              <tr>
+                <th>Copia de cedula: </th>
+                <td> {{ form.tramite.copia_cedula }}</td>
+                <th>Otro: </th>
+                <td> {{ form.tramite.otro }}</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td colspan="6">&nbsp;</td>
+            </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <th>Tec Responsable: </th>
+                <td>{{ form.tramite.tecnico }}</td>
+              </tr>
+          <tr>
+            <td colspan="6"><center><button type="submit" class="boton_1">Guardar</button></center></td>
+        </tr>
+            </table>
+    </table></center>
+</form>
+{% endblock %}
